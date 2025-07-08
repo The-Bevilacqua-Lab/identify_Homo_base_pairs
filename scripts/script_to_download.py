@@ -4,10 +4,10 @@ from subprocess import call
 
 
 #import list of structures to be downloaded
-df_str= pd.read_csv('/storage/work/jlj5912/NMR_Structures/All_NMR_Structures.csv')
+df_str= pd.read_csv('/storage/work/mks7008/NMR_structures/All_NMR_Structures.csv')
 home= os.getcwd()
 str_files=[]
-str_dir= '/storage/work/jlj5912/NMR_Structures' #directory where we want to save the structures
+str_dir= '/storage/work/mks7008/NMR_structures' #directory where we want to save the structures
 os.chdir(str_dir)
 
 for i, j in enumerate(df_str['PDB_ID']):

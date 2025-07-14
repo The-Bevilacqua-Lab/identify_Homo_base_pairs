@@ -51,7 +51,7 @@ D1= pd.read_csv(csvfile, keep_default_na=False, dtype={'seg_ID': str, 'res_ID_re
 #get the directory containing all json files 
 json_dr = args[1]
 
-R= int(args[2]) #R is indicating the register we are analyzing here, 1= standard wobble, 2= shifted wobble
+#R= int(args[2]) #R is indicating the register we are analyzing here, 1= standard wobble, 2= shifted wobble
 
 #below is the home directory, this script is srtored in this directory
 hm_dr= os.getcwd()
@@ -194,9 +194,5 @@ def get_key(value):
             return key
 D1['location_in_secondary_structure'] = D1['bp_ID'].apply(get_key)
 
-if R==1:
-    #for standard wobble
-    D1.to_csv('../../results/all_standard_wobble_2D_loc.csv', index= False)
-elif R==2:
-    #for shifted wobble
-    D1.to_csv('../../results/all_shifted_wobble_2D_loc.csv', index= False)
+
+D1.to_csv('../data/Output/aligned_AA_with_2D_locs.csv', index=False)

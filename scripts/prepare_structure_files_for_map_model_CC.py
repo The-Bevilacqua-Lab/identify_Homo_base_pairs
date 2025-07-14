@@ -255,10 +255,8 @@ clipped_cif_dir= args[1] #this is the directory where you want to store the clip
 
 D2= fix_PDB_ID(D1)
 
-sw_df1= D2[D2['representative']==1]
-sw_df1.index= np.arange(0, len(sw_df1))
+unq_PDB_IDs= list(set(list(D2['PDB_ID'].to_list()))) #list of unique pdb_ids
 
-unq_PDB_IDs= list(set(list(sw_df1['PDB_ID'].to_list()))) #list of unique pdb_ids
 os.chdir(clipped_cif_dir)
 for ind, pid in enumerate(unq_PDB_IDs):
     tcif= extract_cif(pid)
